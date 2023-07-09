@@ -1,0 +1,93 @@
+{
+  "name": "qu3st-solidity",
+  "jest": {
+    "verbose": true
+  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "solhint": " ./node_modules/.bin/solhint -f table ./contracts/*.sol",
+    "prettier:solidity": " ./node_modules/.bin/prettier --write contracts/*.sol",
+    "build": "npx hardhat compile --show-stack-traces",
+    "clean": "npx hardhat clean --show-stack-traces",
+    "typechain:generate": "typechain --target=ethers-v5 ./abi/**/*.json --out-dir=types/ --show-stack-traces",
+    "local-testnet: NO DEPLOY": "npx hardhat node --no-deploy --show-stack-traces",
+    "local-testnet": "npx hardhat node --show-stack-traces",
+    "test: Qu3stRedeem": "npx hardhat test test/Qu3stRedeem.test.ts --network hardhat --show-stack-traces",
+    "coverage: Qu3stRedeem": "npx hardhat coverage --testfiles \"test/Qu3stRedeem.test.ts\"",
+    "deploy: fuji ERC721EnumerableExample": "npx hardhat deploy --network avalanche_fuji --tags ERC721EnumerableExample",
+    "deploy: fuji Qu3stRedeem": "npx hardhat deploy --network avalanche_fuji --tags Qu3stRedeem",
+    "deploy: avalanche Qu3stRedeem": "npx hardhat deploy --network avalanche --tags Qu3stRedeem",
+    "deploy: goerli ERC721EnumerableExample": "npx hardhat deploy --network goerli --tags ERC721EnumerableExample",
+    "deploy: arbitrum Qu3stRedeem": "npx hardhat deploy --network arbitrum --tags Qu3stRedeem",
+    "deploy: polygon Qu3stRedeem": "npx hardhat deploy --network polygon --tags Qu3stRedeem",
+
+    "deploy: ronin-testnet ERC721EnumerableExample": "npx hardhat deploy --network ronin-testnet --tags ERC721EnumerableExample",
+    "deploy: ronin-testnet Qu3stRedeem": "npx hardhat deploy --network ronin-testnet --tags Qu3stRedeem"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "quan612",
+  "license": "ISC",
+  "devDependencies": {
+    "@gnosis.pm/safe-core-sdk": "^2.1.0",
+    "@gnosis.pm/safe-core-sdk-types": "^1.1.0",
+    "@gnosis.pm/safe-ethers-adapters": "^0.1.0-alpha.8",
+    "@gnosis.pm/safe-ethers-lib": "^1.1.0",
+    "@gnosis.pm/safe-service-client": "^1.1.1",
+    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.3.0-beta.13",
+    "@nomiclabs/hardhat-etherscan": "^3.0.0",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@typechain/ethers-v5": "^10.0.0",
+    "@typechain/hardhat": "^6.0.0",
+    "@types/chai": "^4.3.3",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^18.7.16",
+    "axios": "^0.25.0",
+    "chai": "^4.3.6",
+    "chai-ethers": "^0.0.1",
+    "dotenv": "^10.0.0",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.6.1",
+    "hardhat": "^2.12.2",
+    "hardhat-deploy": "^0.11.14",
+    "hardhat-deploy-ethers": "^0.3.0-beta.13",
+    "hardhat-gas-reporter": "^1.0.7",
+    "jest": "^27.4.7",
+    "mocha": "^10.0.0",
+    "prettier": "^2.7.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.19",
+    "prisma": "^3.12.0",
+    "solhint": "^3.3.7",
+    "solhint-plugin-prettier": "^0.0.5",
+    "solidity-coverage": "^0.7.21",
+    "ts-node": "^10.9.1",
+    "typechain": "^8.0.0",
+    "typescript": "^4.8.3",
+    "web3": "^1.7.0"
+  },
+  "dependencies": {
+    "@chainlink/contracts": "^0.5.1",
+    "@chainlink/token": "^1.1.0",
+    "@openzeppelin/contracts": "^4.4.1",
+    "@openzeppelin/contracts-upgradeable": "^4.5.2",
+    "@openzeppelin/upgrades-core": "^1.15.0",
+    "@prisma/client": "^3.12.0",
+    "@sharedstate/verbs": "^0.0.18",
+    "@solidity-parser/parser": "^0.14.3",
+    "csv-stringify": "^6.0.5",
+    "hardhat-abi-exporter": "^2.9.0",
+    "hardhat-contract-sizer": "^2.5.1",
+    "hardhat-tracer": "^2.0.0-beta.6",
+    "lodash": "^4.17.21",
+    "md5": "^2.3.0",
+    "node-fetch": "^3.2.0"
+  },
+  "overrides": {
+    "@nomiclabs/hardhat-waffle": {
+      "@nomiclabs/hardhat-ethers": "$@nomiclabs/hardhat-ethers"
+    }
+  }
+}

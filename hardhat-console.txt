@@ -1,0 +1,6 @@
+const erc721= await ethers.getContractFactory("ERC721EnumerableExample")
+const tanuki = await erc721.attach("0xd202fBCf67475C4EF83A08Bd017C0b1D4A1Dc488")
+
+let uriTest=await tanuki.tokenURI(1)
+await tanuki.mintToWallet("0xae7052c696249596abdb9928554e6ac6feec2053")
+

@@ -1,0 +1,18 @@
+dotenv -e .env.development -- node ./prisma/seed/admin.js
+
+dotenv -e .env.staging -- node ./merkleTree/buildMerkleTree.js
+
+
+
+npx hardhat verify --network goerli
+npx hardhat verify --network mainnet
+
+npx hardhat verify --contract "contracts/UniversalEquipmentManager.sol:UniversalEquipmentManager" --network goerli
+
+merkele: 0xb3f5385140c3c30e2e4e77191158b4f1c3eb50d8fe73ae7c7b523673953e4cb7
+
+ npx hardhat verify 0xA1195403EB1A978d079027d7E11D9F42cD9867fb --network avalanche_fuji
+
+  npx hardhat verify 0x78018cfC8eB23E2963419e3310138c2d14880d35 --network arbitrum
+
+  npx hardhat verify 0x8FC6bf105b143aca24e531622B83757969906b89 --network polygon
